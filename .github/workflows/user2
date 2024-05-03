@@ -1,0 +1,19 @@
+name: Print Secret Variable
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Secret
+        env:
+          MY_VAL: ${{ secrets.FLAG }}
+        run: |
+          import os
+          for q in (os.getenv("MY_VAL")):
+            print(q)
+        shell: python
